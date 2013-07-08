@@ -1,0 +1,19 @@
+{
+  "name": "node-uncaptcha",
+  "version": "0.0.0",
+  "description": "reCAPTCHA helper using decaptcher",
+  "main": "daemon.js",
+  "dependencies": {
+    "decaptcher": "0.0.2",
+    "requester": "~0.1.17",
+    "config": "~0.4.27",
+    "promise-object": "0.0.19"
+  },
+  "devDependencies": {
+    "vows": "~0.7.0"
+  },
+  "scripts": {},
+  "repository": "",
+  "author": "",
+  "license": "BSD"
+}
