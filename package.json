@@ -1,5 +1,5 @@
 {
-  "name": "node-uncaptcha",
+  "name": "uncaptcha",
   "version": "0.0.0",
   "description": "reCAPTCHA helper using decaptcher",
   "main": "daemon.js",

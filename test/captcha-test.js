@@ -1,8 +1,9 @@
 var vows = require('vows'),
 	assert = require('assert'),
-	Uncaptcha = require('../index.js');
+	Uncaptcha = require('../index.js'),
+	config = require('config');
 
-var uncaptcha = new Uncaptcha({key: null, decaptcherKey: null});
+var uncaptcha = new Uncaptcha({key: config.key, decaptcherKey: config.decaptcherKey});
 
 exports.tests = vows.describe('Uncaptcha Tests').addBatch({
 	'Decode': {
