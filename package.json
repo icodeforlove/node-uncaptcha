@@ -1,6 +1,6 @@
 {
   "name": "uncaptcha",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "reCAPTCHA helper using decaptcher",
   "main": "daemon.js",
   "dependencies": {

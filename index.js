@@ -35,10 +35,15 @@ var Uncaptcha = PromiseObject.create({
 		});
 	},
 
-	decode: function ($deferred) {
-		this._getChallenge()
-			.then(this._attemptChallenge)
-			.done($deferred.resolve, $deferred.reject);
+	decode: function ($deferred, challenge) {
+		if (challenge) {
+			this._getChallenge()
+				.then(this._attemptChallenge)
+				.done($deferred.resolve, $deferred.reject);
+		} else {
+			this._attemptChallenge()
+				.done($deferred.resolve, $deferred.reject);
+		}
 	},
 
 	refund: function ($deferred, genTaskID) {

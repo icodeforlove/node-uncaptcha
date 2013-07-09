@@ -23,6 +23,17 @@ uncaptcha.decode().done(
 );
 ```
 
+decoding an already provided challenge
+
+```javascript
+uncaptcha.decode(/* challenge */).done(
+    function (result) {
+        console.log(result); // { challenge: '...', decoded: '...', genTaskID: '...' }
+    },
+    function (error) {}
+);
+```
+
 getting a refund for a bad solve from decaptcher
 
 ```javascript

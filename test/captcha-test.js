@@ -27,6 +27,33 @@ exports.tests = vows.describe('Uncaptcha Tests').addBatch({
 		}
 	},
 
+	'Decode Challenge': {
+		topic: function () {
+			var self = this,
+				uncaptcha = new Uncaptcha({key: config.key, decaptcherKey: config.decaptcherKey});
+
+			uncaptcha.decode().done(
+				function (result) {
+					var uncaptcha = new Uncaptcha({decaptcherKey: config.decaptcherKey});
+					uncaptcha.decode(result.challenge).done(
+						function (result) {
+							self.callback(null, result);
+						},
+						function (error) {
+							self.callback(error);
+						}
+					);
+				}
+			);
+		},
+
+		'is response correct': function (topic) {
+			assert.isNotNull(topic.challenge);
+			assert.isNotNull(topic.decoded);
+			assert.isNotNull(topic.genTaskID);
+		}
+	},
+
 	'Refund': {
 		topic: function () {
 			var self = this;
