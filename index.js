@@ -37,11 +37,11 @@ var Uncaptcha = PromiseObject.create({
 
 	decode: function ($deferred, challenge) {
 		if (challenge) {
-			this._getChallenge()
-				.then(this._attemptChallenge)
+			this._attemptChallenge(challenge)
 				.done($deferred.resolve, $deferred.reject);
 		} else {
-			this._attemptChallenge()
+			this._getChallenge()
+				.then(this._attemptChallenge)
 				.done($deferred.resolve, $deferred.reject);
 		}
 	},
